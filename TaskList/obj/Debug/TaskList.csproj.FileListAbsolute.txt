@@ -1,0 +1,48 @@
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\TaskList.exe
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\TaskList.pdb
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\MainWindow.g.cs
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\App.g.cs
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\TaskList_MarkupCompile.cache
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\TaskList_MarkupCompile.lref
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\MainWindow.baml
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\TaskList.g.resources
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\TaskList.Properties.Resources.resources
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\TaskList.csproj.GenerateResource.Cache
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\TaskList.exe
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\TaskList.pdb
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\TaskList.exe.config
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\EntityFramework.dll
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\EntityFramework.SqlServer.dll
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\EntityFramework.xml
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\EntityFramework.SqlServer.xml
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\System.Data.SQLite.dll
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\System.Data.SQLite.EF6.dll
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\System.Data.SQLite.Linq.dll
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\System.Data.SQLite.xml
+f:\visual studio 2015\Projects\TaskList\TaskList\obj\Debug\TaskList.csprojResolveAssemblyReference.cache
+f:\visual studio 2015\Projects\TaskList\TaskList\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\TaskList.exe.config
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\TaskList.exe
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\TaskList.pdb
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\TaskList.exe
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\TaskList.pdb
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\EntityFramework.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\System.Data.SQLite.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\EntityFramework.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\Debug\System.Data.SQLite.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\MainWindow.g.cs
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\App.g.cs
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\TaskList_MarkupCompile.cache
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\TaskList_MarkupCompile.lref
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\MainWindow.baml
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\TaskList.g.resources
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\TaskList.Properties.Resources.resources
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\TaskList.csproj.GenerateResource.Cache
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\Browser.g.cs
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\Browser.baml
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\Debug\TaskList.csproj.ResolveComReference.cache

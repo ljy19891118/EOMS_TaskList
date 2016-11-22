@@ -1,0 +1,68 @@
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\TaskList.exe.config
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList.csproj.ResolveComReference.cache
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList.csprojResolveAssemblyReference.cache
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\MainWindow.g.cs
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\App.g.cs
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList_MarkupCompile.cache
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList_MarkupCompile.lref
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\TaskList.exe
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\TaskList.pdb
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\CefSharp.Core.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\CefSharp.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\CefSharp.Wpf.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\EntityFramework.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\System.Data.SQLite.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\System.Data.SQLite.EF6.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\System.Data.SQLite.Linq.dll
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\CefSharp.Wpf.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\CefSharp.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\CefSharp.Core.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\EntityFramework.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\EntityFramework.SqlServer.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\bin\x86\Debug\System.Data.SQLite.xml
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\Browser.g.cs
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\Browser.baml
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\MainWindow.baml
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList.g.resources
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList.Properties.Resources.resources
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList.csproj.GenerateResource.Cache
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList.exe
+C:\Users\ljy19\Desktop\TaskList\TaskList\obj\x86\Debug\TaskList.pdb
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\TaskList.exe.config
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList.exe
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList.pdb
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\TaskList.exe
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\TaskList.pdb
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\CefSharp.Core.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\CefSharp.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\CefSharp.Wpf.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\EntityFramework.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\EntityFramework.SqlServer.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\Newtonsoft.Json.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\System.Data.SQLite.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\System.Data.SQLite.EF6.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\System.Data.SQLite.Linq.dll
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\CefSharp.Wpf.xml
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\CefSharp.xml
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\CefSharp.Core.xml
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\EntityFramework.xml
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\EntityFramework.SqlServer.xml
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\System.Data.SQLite.xml
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList.csprojResolveAssemblyReference.cache
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\Browser.g.cs
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\MainWindow.g.cs
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\App.g.cs
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList_MarkupCompile.cache
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList_MarkupCompile.lref
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\Browser.baml
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\MainWindow.baml
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList.g.resources
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList.Properties.Resources.resources
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList.csproj.GenerateResource.Cache
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\TaskList.exe.manifest
+F:\visual studio 2015\Projects\TaskList\TaskList\bin\x86\Debug\TaskList.application
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList.exe.manifest
+F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Debug\TaskList.application

@@ -1,0 +1,3 @@
+JavaScript:parent.parent.location.href='/ultrawf/UltraWF/ManageConfig/UserLogout';
+
+<td class="edit"><a href="JavaScript:parent.parent.location.href='/ultrawf/UltraWF/ManageConfig/UserLogout';"><img alt="退出系统" src="../../bjcss/images/edit1.png" border="0"></a></td>
