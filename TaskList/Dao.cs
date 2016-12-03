@@ -12,16 +12,21 @@ namespace TaskList
     {
         public static string ConnSqlLiteDbPath = "data.db";
 
+        public static SQLiteConnection conn;
 
         public static SQLiteConnection Conn
         {
             get
             {
-                SQLiteConnection conn = new SQLiteConnection();
-                SQLiteConnectionStringBuilder connstr = new SQLiteConnectionStringBuilder();
-                connstr.DataSource = ConnSqlLiteDbPath;
-                conn.ConnectionString = connstr.ToString();
-                conn.Open();
+                if (conn == null)
+                {
+                    conn = new SQLiteConnection();
+                    SQLiteConnectionStringBuilder connstr = new SQLiteConnectionStringBuilder();
+                    connstr.DataSource = ConnSqlLiteDbPath;
+                    conn.ConnectionString = connstr.ToString();
+                    conn.Open();
+                    return conn;
+                }
                 return conn;
             }
         }
@@ -226,7 +231,7 @@ namespace TaskList
         {
             SQLiteCommand command = Conn.CreateCommand();
             command.CommandText = String.Format(@"
-                   update task set Status = '{0}' and Progress = '{1}' where EID = '{2}';
+                   update task set Status = '{0}', Progress = '{1}' where EID = '{2}';
             ", task.Status, task.Progress, task.EID);
             command.ExecuteNonQuery();
         }
@@ -281,6 +286,46 @@ namespace TaskList
             SQLiteCommand command = Conn.CreateCommand();
             command.CommandText = String.Format(@"
                    select * from user;
+            ");
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                User user = new User();
+                user.ID = reader.GetString(0);
+                user.UserName = reader.GetString(1);
+                user.Password = reader.GetString(2);
+                user.GroupNo = reader.GetString(3);
+                user.Type = reader.GetString(4);
+                user.OnDuty = reader.GetString(5);
+                user.Next = reader.GetString(6);
+                user.Name = reader.GetString(7);
+                user.IsOK = reader.GetString(8);
+                list.Add(user);
+
+            }
+            return list;
+        }
+
+        public static ObservableCollection<User> SelectAllOKUsers()
+        {
+            String today = GetToday();
+            SQLiteCommand update1 = Conn.CreateCommand();
+            update1.CommandText = String.Format(@"
+                   update user set OnDuty = '{0}' where ID in (select Next from user where OnDuty <> '' and OnDuty <> '{1}');
+            ", today, today);
+            update1.ExecuteNonQuery();
+
+            SQLiteCommand update2 = Conn.CreateCommand();
+            update2.CommandText = String.Format(@"
+                   update user set OnDuty = '' where OnDuty <> '{0}';
+            ", today);
+            update2.ExecuteNonQuery();
+
+            ObservableCollection<User> list = new ObservableCollection<User>();
+
+            SQLiteCommand command = Conn.CreateCommand();
+            command.CommandText = String.Format(@"
+                   select * from user where IsOK = '1';
             ");
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())

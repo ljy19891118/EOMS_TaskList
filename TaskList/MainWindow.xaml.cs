@@ -87,14 +87,14 @@ namespace TaskList
             //networktimer.Elapsed += NetWorkTimer_Elapsed;
             //networktimer.Start();
             // 立刻开始执行一次
-            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(() => { while (true)  NetWork.doWork(); }));
+            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(() => { while (true) DoNetWork(); }));
             thread.Start();
 
         }
 
         private void NetWorkTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            NetWork.doWork();
+            DoNetWork();
         }
 
         private void RefreshTimer_Elapsed(object sender, ElapsedEventArgs e)
@@ -135,7 +135,10 @@ namespace TaskList
                     Dao.ArchTask(t.EID);
                     if (atlPageNo == 0)
                     {
-                        this.Dispatcher.Invoke(new Action(() => this.atl.Remove(this.atl.Last())));
+                        if (this.atl.Count > 0)
+                        {
+                            this.Dispatcher.Invoke(new Action(() => this.atl.Remove(this.atl.Last())));
+                        }
                         this.Dispatcher.Invoke(new Action(() => this.atl.Insert(0, t)));
                     }
                 }
@@ -249,6 +252,24 @@ namespace TaskList
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             NetWork.CloseBrowser();
+        }
+
+        private void DoNetWork()
+        {
+            try
+            {
+                NetWork.doWork();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("网络连接超时，请重新启动软件重试");
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
     }
 }

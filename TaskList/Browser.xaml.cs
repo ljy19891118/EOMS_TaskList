@@ -118,6 +118,7 @@ namespace TaskList
                 }
                 else
                 {
+                    this.IsDealed = false;
                     this.IsBusy = false;
                 }
             }
@@ -129,7 +130,7 @@ namespace TaskList
                     if (taskList.Count > 0)
                     {
                         this.task = taskList.First();
-                        GoToUrl(Constant.SERVER_ROOT + string.Format(taskUrl, this.task.EID));
+                        Refresh(this.task, e.Frame);
                     }
                     else
                     {
@@ -142,13 +143,15 @@ namespace TaskList
                         else
                         {
                             this.IsDealed = false;
-                            this.IsBusy = false;
+                            this.user = null;
+                            GoToUrl(Constant.SERVER_ROOT + logoutUrl);
                         }
                     }
 
                 }
                 else
                 {
+                    this.user = null;
                     GoToUrl(Constant.SERVER_ROOT + logoutUrl);
                 }
             }
@@ -165,90 +168,10 @@ namespace TaskList
             Console.WriteLine("deal");
         }
 
-        private async void GetTaskList(IFrame frame)
-        {
-            ObservableCollection<Task> tempList = new ObservableCollection<Task>();
-            string js = @"var tableList = new Array();
-                            var eidList = new Array();
-                            tableList = document.getElementsByTagName('tr');
-                            for (var i = 0; i < tableList.length; i++)
-                                {
-                                    var str = tableList[i].getAttribute('Onclick');
-                                    if (str != null)
-                                    {
-                                        start = str.indexOf('eid') + 4;
-                                        stop = str.indexOf('processid') - 1;
-                                        eid = str.substring(start, stop);
-                                        if (eidList.indexOf(eid) == -1)
-                                            eidList.push(eid);
-                                    }
-                                }
-                            tableList;
-
-            ";
-            //TODO 这里需要Debug一下看看返回值是啥，然后下一步作处理
-            JavascriptResponse response = await frame.EvaluateScriptAsync(js);
-            string[] results = response.Result as string[];
-            foreach (string eid in results)
-            {
-                Task task = new Task();
-                task.EID = eid;
-                tempList.Add(task);
-            }
-            foreach(Task task in tempList)
-            {
-                this.taskList.Add(task);
-            }
-
-            // 判断是不是最后一页
-            js = @"document.getElementById('selCurPage').value == document.getElementById('selCurPage').length";
-            JavascriptResponse isEndRe = await frame.EvaluateScriptAsync(js);
-            string isEnd = isEndRe.Result as string;
-
-            // 如果不是最后一页则进行翻页
-            if (isEnd == "false")
-            {
-                //TODO 这行不对，是伪码，需要修改
-                js = @"button.click()";
-                frame.ExecuteJavaScriptAsync(js);
-            }
-            else if (taskList.Count > 0)
-            {
-                GoToUrl(Constant.SERVER_ROOT + mainUrl);
-            }
-            else
-            {
-                this.IsBusy = false;
-            }
-        }
-
-        private void GoToUrl(string url)
-        {
-            this.Dispatcher.Invoke(new Action(() => { this.WebBrowser.Address = url; }));
-        }
-
-        private void Login(IFrame frame)
-        {
-            string s = string.Format(@"document.getElementById('username-id').value = '{0}';", this.user.UserName);
-            s += string.Format(@"document.getElementById('pwd-id').value = '{0}';", this.user.Password);
-            s += string.Format(@"document.getElementsByName('login')[0].click();");
-            frame.ExecuteJavaScriptAsync(s);
-        }
-
-        // 接单的关键方法
-        private async void DealTask(IFrame frame)
+        private async void Refresh(Task task, IFrame frame)
         {
             taskList.Remove(this.task);
-
-  
-            string s = @"function confirm(){
-                            return true;
-                        }";
-            frame.ExecuteJavaScriptAsync(s);
-            s = @"function alert(){}";
-            frame.ExecuteJavaScriptAsync(s);
-            s = @"function onbeforeunload(){}";
-            frame.ExecuteJavaScriptAsync(s);
+            string s = "";
             s = @"function ajax(options) {
                         options = options || {};
                         options.type = (options.type || 'GET').toUpperCase();
@@ -296,8 +219,17 @@ namespace TaskList
                             }
                         }
 
+                        function formatParams(data) {
+                            var arr = [];
+                            for (var name in data) {
+                                arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+                            }
+                            arr.push(('v=' + Math.random()).replace('.', ''));
+                            return arr.join('&');
+                        }
+
                         ajax({
-                            url: '/arsys/BackChannel/?param=100%2FGetEntry%2F12%2Fbmcc-eoms-0524%2FWF%3ABMCC_EOMS_ITDealFault0%2F19%2FARRoot147660699558615%2F"+ this.task.EID + @"2%2F0%2F1%2F1',              //请求地址
+                            url: '/arsys/BackChannel/?param=100%2FGetEntry%2F12%2Fbmcc-eoms-0524%2FWF%3ABMCC_EOMS_ITDealFault0%2F19%2FARRoot147660699558615%2F" + this.task.EID + @"2%2F0%2F1%2F1',              //请求地址
                             type: 'GET',                       //请求方式
                             success: function (response, xml) {
                                 taskData = response;
@@ -307,7 +239,7 @@ namespace TaskList
                             }
                         })";
             frame.ExecuteJavaScriptAsync(s);
-            // 获取页面工单信息
+            // 获取工单信息
             s = "taskData";
             for (int i = 0; i < Constant.WAIT_TIME; i++)
             {
@@ -316,38 +248,165 @@ namespace TaskList
                     GoToUrl(Constant.SERVER_ROOT + mainUrl);
                     return;
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(1000);
+                //if (frame.IsDisposed)
+                //{
+                //    GoToUrl(Constant.SERVER_ROOT + string.Format(taskUrl, this.task.EID));
+                //    return;
+                //}
+                if (frame.IsDisposed)
+                {
+                    break;
+                }
                 JavascriptResponse re = await frame.EvaluateScriptAsync(s);
-                //TODO 这里需要Debug一下看看返回值是啥，然后下一步作处理
+
                 if (re.Result != null)
                 {
-                    if(re.Result as string == "error")
+                    if (re.Result as string == "error" || (re.Result as string).Contains("用户当前是从另一台计算机连接的") || (re.Result as string).Contains("项在数据库中不存在"))
                     {
                         break;
                     }
-                    Task cTask = TaskParser(this.task.EID, re.Result as string);
-
-
-                    // 判断用户类型是否匹配
-                    if ((user.OnDuty == Dao.GetToday()) && (user.Type == Constant.TYPE_CHUANSHU && cTask.Type.Contains(Constant.TYPE_CHUANSHU))
-                        || (user.Type == Constant.TYPE_DEFAULT && !cTask.Type.Contains(Constant.TYPE_CHUANSHU)))
+                    this.task = TaskParser(this.task.EID, re.Result as string);
+                    // 更新的直接存,否则处理完再存
+                    if (!IsDealed)
                     {
-                        string js = @"var as = document.getElementsByTagName('a');
-                                  for(var i = 0; i < as.length; i++){
-                                        if(as[i].className.indexOf('ardbnBtn_Start') > 0){
-                                            if(as[i].getAttribute('style').indexOf('inherit') > 0){                            
-                                                as[i].click();    
-                                                break;                         
-                                            }
-                                        }
-                                   }";
-                        frame.ExecuteJavaScriptAsync(js);
+                        Dao.Save(this.task);
                     }
-                    Dao.Save(cTask);
                     break;
                 }
-
             }
+            GoToUrl(Constant.SERVER_ROOT + string.Format(taskUrl, this.task.EID));
+        }
+
+
+        private async void GetTaskList(IFrame frame)
+        {
+            ObservableCollection<Task> tempList = new ObservableCollection<Task>();
+            string js = @"var tableList = new Array();
+                            var eidList = new Array();
+                            tableList = document.getElementsByTagName('tr');
+                            for (var i = 0; i < tableList.length; i++)
+                                {
+                                    var str = tableList[i].getAttribute('Onclick');
+                                    if (str != null)
+                                    {
+                                        start = str.indexOf('eid') + 4;
+                                        stop = str.indexOf('processid') - 1;
+                                        eid = str.substring(start, stop);
+                                        if (eidList.indexOf(eid) == -1)
+                                            eidList.push(eid);
+                                    }
+                                }
+            ";
+            frame.ExecuteJavaScriptAsync(js);
+            js = "eidList";
+            //TODO 这里需要Debug一下看看返回值是啥，然后下一步作处理
+            JavascriptResponse response = await frame.EvaluateScriptAsync(js);
+            List<object> results = response.Result as List<object>;
+            if(results != null)
+            { 
+                foreach (string eid in results)
+                {
+                    Task task = new Task();
+                    task.EID = eid;
+                    tempList.Add(task);
+                }
+            }
+            foreach (Task task in tempList)
+            {
+                this.taskList.Add(task);
+            }
+
+            if (frame.IsDisposed)
+            {
+                GoToUrl(Constant.SERVER_ROOT + mainUrl);
+                return;
+            }
+            // 判断是不是最后一页
+            js = @"document.getElementById('selCurPage').value == document.getElementById('selCurPage').length";
+            JavascriptResponse isEndRe = await frame.EvaluateScriptAsync(js);
+            string isEnd = isEndRe.Result as string;
+
+            // 如果不是最后一页则进行翻页
+            if (isEnd == "false")
+            {
+                //TODO 这行不对，是伪码，需要修改
+                js = @"button.click()";
+                frame.ExecuteJavaScriptAsync(js);
+            }
+            else if (taskList.Count > 0)
+            {
+                GoToUrl(Constant.SERVER_ROOT + mainUrl);
+            }
+            else
+            {
+                this.IsBusy = false;
+            }
+        }
+
+        private void GoToUrl(string url)
+        {
+            this.Dispatcher.Invoke(new Action(() => { this.WebBrowser.Address = url; }));
+        }
+
+        private async void Login(IFrame frame)
+        {
+            string s = @"function alert(){loginWrong = 1}";
+            frame.ExecuteJavaScriptAsync(s);
+            s = string.Format(@"document.getElementById('username-id').value = '{0}';", this.user.UserName);
+            s += string.Format(@"document.getElementById('pwd-id').value = '{0}';", this.user.Password);
+            s += string.Format(@"document.getElementsByName('login')[0].click();");
+            frame.ExecuteJavaScriptAsync(s);
+            s = "loginWrong";
+            JavascriptResponse re = await frame.EvaluateScriptAsync(s);
+            if (re.Result != null && re.Result as int? == 1)
+            {
+                Dao.Invaild(user);
+                this.IsBusy = false;
+                //MessageBox.Show(user.UserName + "无法登录");
+            }
+        }
+
+        private void prepareDealTask(IFrame frame)
+        {
+            string s = @"function confirm(){
+                            return true;
+                        }";
+            frame.ExecuteJavaScriptAsync(s);
+            s = @"function alert(){}";
+            frame.ExecuteJavaScriptAsync(s);
+            s = @"function onbeforeunload(){}";
+            frame.ExecuteJavaScriptAsync(s);
+ 
+        }
+
+        // 接单的关键方法
+        private void DealTask(IFrame frame)
+        {
+            // 判断用户类型是否匹配
+            if (this.task != null && this.task.Type != null && this.task.Status != Constant.FINISHED && this.task.Status != Constant.EXCEPTION &&
+                (user.OnDuty == Dao.GetToday()) && ((user.Type == Constant.TYPE_CHUANSHU && this.task.Type.Contains(Constant.TYPE_CHUANSHU))
+                || (user.Type == Constant.TYPE_DEFAULT && !this.task.Type.Contains(Constant.TYPE_CHUANSHU))))
+            {
+                if (frame.IsDisposed)
+                {
+                    GoToUrl(Constant.SERVER_ROOT + string.Format(taskUrl, this.task.EID));
+                    return;
+                }
+                Thread.Sleep(5000);
+                string js = @"var as = document.getElementsByTagName('a');
+                            for(var i = 0; i < as.length; i++){
+                                if(as[i].className.indexOf('ardbnBtn_Start') > 0){
+                                    if(as[i].getAttribute('style').indexOf('inherit') > 0){                            
+                                        as[i].click();                                                                       
+                                    }
+                                    break;  
+                                }
+                            }";
+                frame.ExecuteJavaScriptAsync(js);
+                Dao.Save(this.task);
+            }
+
             GoToUrl(Constant.SERVER_ROOT + mainUrl);
 
             //            if (refreshFlag == 0)
@@ -370,7 +429,6 @@ namespace TaskList
         // 没用的方法，但不要删除
         private void WebBrowser_FrameLoadStart(object sender, FrameLoadStartEventArgs e)
         {
-            Console.WriteLine(e.Url);
             IFrame frame = e.Frame;
             if (e.Url.ToString().Contains("Default+Admin+View") && e.Url.ToString().Contains("cacheid") && !e.Url.ToString().Contains("&amp;") && e.Url.ToString().Contains("cacheid="))
             {

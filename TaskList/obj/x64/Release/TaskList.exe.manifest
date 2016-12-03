@@ -150,14 +150,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TaskList.exe" size="56800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TaskList.exe" size="71648">
       <assemblyIdentity name="TaskList" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>igDQgzHeSjLNtribC/sxj8zBIlpQ7Gwog5x8bAKqD1Q=</dsig:DigestValue>
+        <dsig:DigestValue>P9Wn4m/SI/jI5q3VuCtFKGWGbfuv84L7R3+3XRnOcZc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

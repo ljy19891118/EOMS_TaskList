@@ -51,7 +51,7 @@ namespace TaskList
             }
             catch(Exception ex)
             {
-
+                Console.WriteLine(ex);
             }
             brower = new Browser();
             brower.Show();
@@ -60,7 +60,7 @@ namespace TaskList
 
         internal static void doWork()
         {
-            foreach (User user in Dao.SelectAllUsers())
+            foreach (User user in Dao.SelectAllOKUsers())
             {
                 DealWork(user);
             }
@@ -79,7 +79,8 @@ namespace TaskList
                 }
                 else if (i == Constant.WAIT_TIME - 1)
                 {
-                    ResetBrowser();
+                    throw new TimeoutException();
+                    //NetWork.dispatcher.Invoke(new Action(() => { ResetBrowser(); }));
                 }
             }
             NetWork.dispatcher.Invoke(new Action(() => { brower.Finish(); }));
@@ -92,7 +93,8 @@ namespace TaskList
                 }
                 else if (i == Constant.WAIT_TIME - 1)
                 {
-                    ResetBrowser();
+                    throw new TimeoutException();
+                    //NetWork.dispatcher.Invoke(new Action(() => { ResetBrowser(); }));
                 }
             }
         }

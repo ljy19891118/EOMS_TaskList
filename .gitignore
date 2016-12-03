@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.suo
+TaskList/obj/x86/Release/TaskList_MarkupCompile.i.cache
+*.lref
+TaskList/obj/x86/Release/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache

@@ -20,7 +20,7 @@ namespace TaskList
         public static readonly int ARCH_PERIOD_DAY = 3;
         public static readonly int WARNING_PERIOD_MINUTE = 30;
 
-        public static readonly int WAIT_TIME = 30;
+        public static readonly int WAIT_TIME = 3000;
 
         public static readonly string DEFAULT_PASSWORD = "aaa,123";
         public static readonly string SERVER_ROOT = @"http://10.224.145.100:8080";

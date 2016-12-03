@@ -34,3 +34,39 @@ F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Release\TaskList.applic
 F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Release\TaskList.exe
 F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Release\TaskList.pdb
 F:\visual studio 2015\Projects\TaskList\TaskList\obj\x86\Release\TaskList.csprojResolveAssemblyReference.cache
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\TaskList.exe.config
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList.exe
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList.pdb
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\TaskList.exe.manifest
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\TaskList.application
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\TaskList.exe
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\TaskList.pdb
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\CefSharp.Core.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\CefSharp.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\CefSharp.Wpf.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\EntityFramework.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\EntityFramework.SqlServer.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\Newtonsoft.Json.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\System.Data.SQLite.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\System.Data.SQLite.EF6.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\System.Data.SQLite.Linq.dll
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\CefSharp.Wpf.xml
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\CefSharp.xml
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\CefSharp.Core.xml
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\EntityFramework.xml
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\EntityFramework.SqlServer.xml
+F:\github\EOMS_TaskList\TaskList\bin\x86\Release\System.Data.SQLite.xml
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList.csprojResolveAssemblyReference.cache
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\Browser.g.cs
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\MainWindow.g.cs
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\App.g.cs
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList_MarkupCompile.cache
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList_MarkupCompile.lref
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\Browser.baml
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\MainWindow.baml
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList.g.resources
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList.Properties.Resources.resources
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList.csproj.GenerateResource.Cache
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList.exe.manifest
+F:\github\EOMS_TaskList\TaskList\obj\x86\Release\TaskList.application

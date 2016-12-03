@@ -78,3 +78,20 @@
 [0920/182436:ERROR:ipc_channel_win.cc(519)] pipe error: 232
 [0920/182451:FATAL:memory_win.cc(38)] Out of memory, size = 1048576
 [0920/182846:FATAL:memory_win.cc(38)] Out of memory, size = 1048576
+[1203/103423:ERROR:ipc_channel_win.cc(482)] pipe error: 109
+[1203/104331:ERROR:ipc_channel_win.cc(519)] pipe error: 232
+[1203/111216:ERROR:ipc_channel_win.cc(519)] pipe error: 232
+[1203/111216:ERROR:ipc_channel_win.cc(519)] pipe error: 232
+[1203/112448:ERROR:ipc_channel_win.cc(519)] pipe error: 232
+[1203/112448:ERROR:ipc_channel_win.cc(519)] pipe error: 232
+[1203/114530:ERROR:ipc_channel_win.cc(519)] pipe error: 232
+[1203/122440:ERROR:ipc_channel_win.cc(482)] pipe error: 109
+[1203/124048:ERROR:gles2_cmd_decoder.cc(13997)] [.CommandBufferContext.RenderWorker-0A1656F8]GL ERROR :GL_INVALID_VALUE : glCopySubTextureCHROMIUM: source texture has no level 0
+[1203/124618:ERROR:ipc_channel_win.cc(482)] pipe error: 109
+[1203/125116:ERROR:ipc_channel_win.cc(482)] pipe error: 109
+[1203/125606:ERROR:ipc_channel_win.cc(519)] pipe error: 232
+[1203/144015:ERROR:ipc_channel_win.cc(482)] pipe error: 109
+[1203/160356:ERROR:ipc_channel_win.cc(482)] pipe error: 109
+[1203/161120:ERROR:ipc_channel_win.cc(482)] pipe error: 109
+[1203/172230:ERROR:ipc_channel_win.cc(519)] pipe error: 232
+[1203/172230:ERROR:ipc_channel_win.cc(519)] pipe error: 232
